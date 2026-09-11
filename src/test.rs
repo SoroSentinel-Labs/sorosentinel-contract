@@ -5,7 +5,7 @@ use soroban_sdk::testutils::Address as _;
 #[test]
 fn test_initialize_and_threshold() {
     let env = Env::default();
-    let contract_id = env.register_contract(None, SoroSentinel);
+    let contract_id = env.register(SoroSentinel, ());
     let client = SoroSentinelClient::new(&env, &contract_id);
 
     let admin = Address::generate(&env);
